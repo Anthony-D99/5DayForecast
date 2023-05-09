@@ -15,11 +15,9 @@ var cityName = $(inputSearch).val()
 function getWeatherAPI(requestWeatherUrl) {
   fetch(requestWeatherUrl)
     .then(function (response) {
-      console.log(response.status);
       return response.json();
     })
     .then(function (data) {
-      console.log(data)
       $('img').remove()
       // current day
       var forecastDate = data.list[0].dt_txt
@@ -37,7 +35,7 @@ function getWeatherAPI(requestWeatherUrl) {
 
 
       cityDate.text(currentCity + " " + firstDayDate)
-      $('#currentDayIcon').append('src', getWeatherIcon(0))
+      $('#currentDayIcon').append(getWeatherIcon(0))
       $('#temp1').text(`Temp:${currentDayForecastTemp}F`)
       $('#wind1').text(`Wind:${currentDayForecastWind}MPH`)
       $('#humidity1').text(`Humidity:${currentDayForecastHumidity}%`)
@@ -51,7 +49,7 @@ function getWeatherAPI(requestWeatherUrl) {
       var firstDayForecastWind = data.list[1].wind.speed
       var firstDayForecastHumidity = data.list[1].main.humidity
       $('#firstDay').text(firstDayDate)
-      $('#firstDayIcon').append('src', getWeatherIcon(1))
+      $('#firstDayIcon').append(getWeatherIcon(1))
       $('#temp2').text(`Temp:${firstDayForecastTemp}F`)
       $('#wind2').text(`Wind:${firstDayForecastWind}MPH`)
       $('#humidity2').text(`Humidity:${firstDayForecastHumidity}%`)
@@ -65,7 +63,7 @@ function getWeatherAPI(requestWeatherUrl) {
       var secondDayForecastWind = data.list[9].wind.speed
       var secondDayForecastHumidity = data.list[9].main.humidity
       $('#secondDay').text(secondDayDate)
-      $('#secondDayIcon').append('src', getWeatherIcon(9))
+      $('#secondDayIcon').append(getWeatherIcon(9))
       $('#temp3').text(`Temp:${secondDayForecastTemp}F`)
       $('#wind3').text(`Wind:${secondDayForecastWind}MPH`)
       $('#humidity3').text(`Humidity:${secondDayForecastHumidity}%`)
@@ -79,7 +77,7 @@ function getWeatherAPI(requestWeatherUrl) {
       var thirdDayForecastWind = data.list[17].wind.speed
       var thirdDayForecastHumidity = data.list[17].main.humidity
       $('#thirdDay').text(thirdDayDate)
-      $('#thirdDayIcon').append('src', getWeatherIcon(17))
+      $('#thirdDayIcon').append(getWeatherIcon(17))
       $('#temp4').text(`Temp:${thirdDayForecastTemp}F`)
       $('#wind4').text(`Wind:${thirdDayForecastWind}MPH`)
       $('#humidity4').text(`Humidity:${thirdDayForecastHumidity}%`)
@@ -93,7 +91,7 @@ function getWeatherAPI(requestWeatherUrl) {
       var fourthDayForecastWind = data.list[25].wind.speed
       var fourthDayForecastHumidity = data.list[25].main.humidity
       $('#fourthDay').text(fourthDayDate)
-      $('#fourthDayIcon').append('src', getWeatherIcon(25))
+      $('#fourthDayIcon').append(getWeatherIcon(25))
       $('#temp5').text(`Temp:${fourthDayForecastTemp}F`)
       $('#wind5').text(`Wind:${fourthDayForecastWind}MPH`)
       $('#humidity5').text(`Humidity:${fourthDayForecastHumidity}%`)
@@ -107,7 +105,7 @@ function getWeatherAPI(requestWeatherUrl) {
       var fithDayForecastWind = data.list[33].wind.speed
       var fithDayForecastHumidity = data.list[33].main.humidity
       $('#fithDay').text(fithDayDate)
-      $('#fithDayIcon').append('src', getWeatherIcon(33))
+      $('#fithDayIcon').append(getWeatherIcon(33))
       $('#temp6').text(`Temp:${fithDayForecastTemp}F`)
       $('#wind6').text(`Wind:${fithDayForecastWind}MPH`)
       $('#humidity6').text(`Humidity:${fithDayForecastHumidity}%`)
@@ -142,7 +140,6 @@ function getWeatherAPI(requestWeatherUrl) {
 function getApi(requestUrl) {
   fetch(requestUrl)
     .then(function (response) {
-      console.log(response.status);
       return response.json();
     })
     .then(function (data) {
