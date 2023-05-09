@@ -18,19 +18,18 @@
     <div class="d-flex-flexbox row">
         <div class="searchArea  p-5 col-3">
             <h1>Search for a City:</h1>
-            <input class='inputSearch col-10 m-2' type="text">
-            <button type="button" class="searchButton col-10 m-2 btn btn-primary">Search</button>
+            <input class='inputSearch col-10 m-2 city-input' type="text" name="city" placeholder="San Diego">
+            <button type="search-history" class="searchButton col-10 m-2 btn btn-primary">Search</button>
 
-
+            <div id="underline"></div>
             <div id="searchHistory"></div>
 
         </div>
 
-        <div class="d-flex-column col-7 ">
+        <div class="d-flex-column col-7 displayArea hide">
             <div class="todaysWeather fw-lighter h-auto border-2 border border-dark">
                 <h2 id="cityDate"></h2>
-                <img style="display: inline-block none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"
-                    src="" id="icon1">
+                <h3 id="currentDayIcon"></h3>
                 <h3 id="temp1"></h3>
                 <h3 id="wind1"></h3>
                 <h3 id="humidity1"></h3>
@@ -39,8 +38,7 @@
             <div class="d-flex m-2 col-2 text-light">
                 <div class="fiveDayCast m-4 p-3 rounded">
                     <h4 id="firstDay"></h4>
-                    <img style="display: inline-block none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"
-                        src="" id="icon2">
+                    <h5 id="firstDayIcon"></h5>
                     <h5 id="icon2"></h5>
                     <h5 id="temp2"></h5>
                     <h5 id="wind2"></h5>
@@ -48,8 +46,7 @@
                 </div>
                 <div class="fiveDayCast m-4 p-3 rounded">
                     <h4 id="secondDay"></h4>
-                    <img style="display: inline-block none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"
-                        src="" id="icon3">
+                    <h5 id="secondDayIcon"></h5>
                     <h5 id="icon3"></h5>
                     <h5 id="temp3"></h5>
                     <h5 id="wind3"></h5>
@@ -57,8 +54,7 @@
                 </div>
                 <div class="fiveDayCast m-4 p-3 rounded">
                     <h4 id="thirdDay"></h4>
-                    <img style="display: inline-block none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"
-                        src="" id="icon4">
+                    <h5 id="thirdDayIcon"></h5>
                     <h5 id="icon4"></h5>
                     <h5 id="temp4"></h5>
                     <h5 id="wind4"></h5>
@@ -66,8 +62,7 @@
                 </div>
                 <div class="fiveDayCast m-4 p-3 rounded">
                     <h4 id="fourthDay"></h4>
-                    <img style="display: inline-block none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"
-                        src="" id="icon5">
+                    <h5 id="fourthDayIcon"></h5>
                     <h5 id="icon5"></h5>
                     <h5 id="temp5"></h5>
                     <h5 id="wind5"></h5>
@@ -75,8 +70,7 @@
                 </div>
                 <div class="fiveDayCast m-4 p-3 rounded">
                     <h4 id="fithDay"></h4>
-                    <img style="display: inline-block none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"
-                        src="" id="icon6">
+                    <h5 id="fithDayIcon"></h5>
                     <h5 id="icon6"></h5>
                     <h5 id="temp6"></h5>
                     <h5 id="wind6"></h5>
@@ -89,7 +83,7 @@
 
 
 
-
+        
         <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
             integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
